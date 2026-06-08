@@ -1,20 +1,16 @@
-def copy_file(command):
+def copy_file(command: str) -> None:
     parts = command.split()
 
-    # якщо команда порожня або неправильний формат (немає 3 частин)
     if len(parts) != 3:
         return
 
-    # якщо перше слово не "cp"
     if parts[0] != "cp":
         return
 
-    # якщо файл не існує
     import os
     if not os.path.exists(parts[1]):
         return
 
-    # якщо імена однакові
     if parts[1] == parts[2]:
         return
 
